@@ -1,0 +1,47 @@
+ID: workflow-tiles
+_schema-version: '2.1'
+version: 0.0.1
+modules:
+  - name: workflow-tiles-approuter
+    type: approuter.nodejs
+    path: approuter
+    parameters:
+      disk-quota: 256M
+      memory: 256M
+    requires:
+      - name: workflow_project_second
+      - name: workflow-tiles-uaa
+      - name: workflow-tiles-portal-resources
+      - name: workflow-tiles-html5-repo-runtime
+  - name: workflow-tiles-launchpad
+    type: com.sap.application.portal.content
+    path: launchpad
+    requires:
+      - name: workflow-tiles-portal-resources
+        parameters:
+          service-key:
+            name: content-deploy-key
+            config:
+              content-endpoint: developer
+          content-target: true
+      - name: workflow-tiles-uaa
+      - name: workflow_project_second
+resources:
+  - name: workflow_project_second
+    type: org.cloudfoundry.existing-service
+  - name: workflow-tiles-uaa
+    parameters:
+      path: ./xs-security.json
+      service-plan: application
+      service: xsuaa
+    type: org.cloudfoundry.managed-service
+  - name: workflow-tiles-portal-resources
+    parameters:
+      service-plan: standard
+      service: portal
+    type: org.cloudfoundry.managed-service
+  - name: workflow-tiles-html5-repo-runtime
+    parameters:
+      service-plan: app-runtime
+      service: html5-apps-repo
+    type: org.cloudfoundry.managed-service
