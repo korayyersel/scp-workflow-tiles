@@ -30,6 +30,14 @@
 					"id": "cross.fnd.fiori.inbox-0-1600716650033",
 					"appId": "cross.fnd.fiori.inbox",
 					"vizId": "WorkflowTask-DisplayMyInbox"
+				}, {
+					"id": "com.sap.bpm.monitorworkflow-1-1602056745696",
+					"appId": "com.sap.bpm.monitorworkflow",
+					"vizId": "bpmworkflowmonitor-DisplayDefinitions"
+				}, {
+					"id": "com.sap.bpm.monitorworkflow-2-1602056745696",
+					"appId": "com.sap.bpm.monitorworkflow",
+					"vizId": "bpmworkflowmonitor-DisplayInstances"
 				}]
 			}
 		}],
