@@ -9,7 +9,7 @@ modules:
       disk-quota: 256M
       memory: 256M
     requires:
-      - name: [existing-workflow-service]
+      - name: _existing-workflow-service_
       - name: workflow-tiles-uaa
       - name: workflow-tiles-portal-resources
       - name: workflow-tiles-html5-repo-runtime
@@ -25,9 +25,9 @@ modules:
               content-endpoint: developer
           content-target: true
       - name: workflow-tiles-uaa
-      - name: [existing-workflow-service]
+      - name: _existing-workflow-service_
 resources:
-  - name: [existing-workflow-service]
+  - name: _existing-workflow-service_
     type: org.cloudfoundry.existing-service
   - name: workflow-tiles-uaa
     parameters:
