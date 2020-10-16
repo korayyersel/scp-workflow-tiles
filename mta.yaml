@@ -14,7 +14,7 @@ modules:
       - name: workflow-tiles-portal-resources
       - name: workflow-tiles-html5-repo-runtime
   - name: workflow-tiles-launchpad
-    type: com.sap.application.portal.content
+    type: com.sap.application.content
     path: launchpad
     requires:
       - name: workflow-tiles-portal-resources
