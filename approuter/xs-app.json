@@ -1,4 +1,12 @@
 {
 	"welcomeFile": "/cp.portal",
-	"authenticationMethod": "route"
+    "authenticationMethod": "route",
+    "routes": [        
+        {
+            "source": "^/gateway/(.*)$",
+            "target": "/$1",
+            "destination": "gateway",
+            "authenticationType": "none"
+        }
+    ]
 }

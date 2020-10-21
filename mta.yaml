@@ -13,6 +13,8 @@ modules:
       - name: workflow-tiles-uaa
       - name: workflow-tiles-portal-resources
       - name: workflow-tiles-html5-repo-runtime
+      - name: workflow-tiles-dest
+      - name: workflow-tiles-conn
   - name: workflow-tiles-launchpad
     type: com.sap.application.content
     path: launchpad
@@ -44,4 +46,14 @@ resources:
     parameters:
       service-plan: app-runtime
       service: html5-apps-repo
+    type: org.cloudfoundry.managed-service
+  - name: workflow-tiles-conn
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service-plan: lite
+      service: connectivity
+  - name: workflow-tiles-dest
+    parameters:
+      service-plan: lite
+      service: destination
     type: org.cloudfoundry.managed-service
